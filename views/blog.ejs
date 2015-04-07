@@ -3,8 +3,8 @@
 
 <div class='col-md-8 col-md-offset-2'>
 	<div class="form-signup-heading">BLOG</div>
-	    <% blogs.forEach(function (blog, index) { %>
-        <h4><strong><a href="/blog/<%= blog._id %>"><%= blog.title %></a></strong></h4>
+
+        <h4><strong><a href="#"><%= blog.title %></a></strong></h4>
         <div><%- blog.content %> </div>
 
         <div class="row-fluid">
@@ -19,6 +19,6 @@
             </div>
         </div>
     	<hr>
-		<% }) %>
+
 </div>
 <%- include footer %>

@@ -9,7 +9,7 @@ var Blogschema = new Schema({
     reply_count:{ type:Number, default:0 },
     visit_count:{ type:Number, default:0 },
     collect_count:{ type:Number, default:0 },
-    create_at:{ type:Date, default:Date.now },
+    create_at:{ type:String },
     update_at:{ type:Date, default:Date.now },
     last_reply:{ type:Schema.ObjectId },
     last_reply_at:{ type:Date, default:Date.now }

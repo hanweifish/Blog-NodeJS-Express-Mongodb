@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<title>Blog--NodeJs</title>
-<link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Blog--NodeJs</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/style.css">
+	</head>
 
-<header>
-<h1><%= title %></h1>
-</header>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <a class="navbar-brand" href="#">Blog-NodeJS</a>
+	          <ul class="nav navbar-nav navbar-collapse collapse">
+                <li class="active"><a href="/">Home</a></li>
+				<% if(user) {%>
+                <li><a href="/myblog">My Blog</a></li>
+                <li><a href="/post">New Post</a></li>
+                <li><a href="/logout">Logout</a></li>
+				<% } else { %>
+                <li><a href="/reg">SignUp</a></li>
+				<% } %>
+                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#About">About</a></li>
+              </ul>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse navbar-right">
+	        	<% if(user) {%>
+	       			<div class="navbar-header">
+	       				<ul class="nav navbar-nav">
+                			<li><a href="#">Hello, <%= user.name %></a></li>
+                		</ul>
+                	</div>
+				<% } else { %>
+			          <form name="login-form" class="navbar-form navbar-collapse collapse" method="post" action="/">
+			            <div class="form-group">
+			              <input type="text" name="name" placeholder="Username" class="form-control" autocomplete="off">
+			            </div>
+			            <div class="form-group">
+			              <input type="password" name="password" placeholder="Password" class="form-control">
+			            </div>
+			            <button type="submit" class="btn btn-success">Sign in</button>
+			          </form>
+				<% } %>
 
-<nav>
-<span><a title="Home" href="/">Home</a></span>
-<% if(user) {%>
-<span><a title="Login" href="/post">Post</a></span>
-<span><a title="Signup" href="/logout">Logout</a></span>
-<% } else { %>
-<span><a title="Login" href="/login">Login</a></span>
-<span><a title="Signup" href="/reg">SignUp</a></span>
-<% } %>
-</nav>
+	        </div>
+	       </div>
+    	</nav>
 
-<article>
-	<% if (success) { %>
-  <div><%= success %></div>
-<% } %>
-<% if (error) { %>
-  <div><%= error %> </div>
-<% } %>
+    	<div class="container maincontent">
+    		<div class="row">
+<!-- 		<header>
+		<h1><%= title %></h1>
+		</header>
+ -->
+<!--
+		<article>1234134
+			<% if (success) { %>
+		  <div><%= success %></div>
+		<% } %>
+		<% if (error) { %>
+		  <div><%= error %> </div>
+		<% } %>
+	    </article> -->
