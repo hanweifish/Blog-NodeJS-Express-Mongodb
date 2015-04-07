@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include header %>
+<% blogs.forEach(function (blog, index) { %>
+  <p><h2><a href="#"><%= blog.title %></a></h2></p>
+  <p class="info">
+   	Posted By：<a href="#"><%= blog.author_name %></a> |
+    Date：<%= blog.create_at %>
+  </p>
+  <p><%- blog.content %></p>
+<% }) %>
+<%- include footer %>
