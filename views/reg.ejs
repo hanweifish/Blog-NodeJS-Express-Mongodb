@@ -21,13 +21,14 @@
 	        <label for="inputPassword2">Repeat-Password</label>
 	        <input type="password" id="inputPassword2" name="password-repeat" class="form-control" placeholder="Repeat-Password" required>
 	    </div>
-	    <div class="has-error">
-	    <% if (error) { %>
-		  <div><%= error %> </div>
-		<% } %>
-		</div>
+	    <div class="reg-err">
+			<% if (reg_error) { %>
+				<button type="button" class="btn btn-warning"><%= reg_error %></button>
+			<% } %>
+	    </div>
         <input class="btn btn-lg btn-primary" type="submit" value="SignUp"></input>
       </form>
+
 
  </div>
 <%- include footer %>

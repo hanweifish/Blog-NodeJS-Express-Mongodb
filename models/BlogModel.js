@@ -10,9 +10,10 @@ var Blogschema = new Schema({
     visit_count:{ type:Number, default:0 },
     collect_count:{ type:Number, default:0 },
     create_at:{ type:String },
-    update_at:{ type:Date, default:Date.now },
+    update_at:{ type:String },
     last_reply:{ type:Schema.ObjectId },
-    last_reply_at:{ type:Date, default:Date.now }
+    last_reply_at:{ type:Date, default:Date.now },
+    comments: { type:Array },
 });
 
 mongoose.model('Blog', Blogschema);

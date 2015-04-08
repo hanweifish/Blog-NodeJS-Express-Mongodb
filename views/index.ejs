@@ -7,18 +7,28 @@
         <h4><strong><a href="/blog/<%= blog._id %>"><%= blog.title %></a></strong></h4>
         <div><%- blog.content %> </div>
 
-        <div class="row-fluid">
-            <div class="span3">
-            	<br><p class="muted"><i class="icon-user"></i><small> Post by: <%= blog.author_name %></small>
-                <br><i class="icon-time"></i><small> <%= blog.create_at %></small></p>
-            </div>
-            <div class="span2 offset7">
-                <a href="#"><i class="icon-trash"></i></a>
-                <a href="#"><i class="icon-edit"></i></a>
-                <a href="#"><i class="icon-comment"></i></a>
+        <div class="row-fluid content-bottom">
+            <div class="row">
+                <div class="col-md-5">
+                	<i class="fa fa-user"></i> <small> <%= blog.author_name %></small>
+                    <br>
+                    <i class="fa fa-clock-o"></i> </i><small><%= blog.create_at %></small>
+                </div>
+                <div class="col-md-2 pull-right">
+                    <% if (user&&blog.author_name == user.name) {%>
+                        <a href="/edit/<%=blog._id%>"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="/blog/<%=blog._id%>"><i class="fa fa-comments fa-lg"></i></a>
+                        <a href="/delete/<%=blog._id%>"><i class="fa fa-trash-o fa-lg"></i></i></a>
+                    <% } else {%>
+                        <a href="/comment/<%=blog._id%>"><i class="fa fa-comments fa-lg"></i></a>
+                    <% } %>
+                </div>
             </div>
         </div>
     	<hr>
 		<% }) %>
+    </div>
 </div>
+
+
 <%- include footer %>
