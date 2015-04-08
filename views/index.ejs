@@ -17,10 +17,10 @@
                 <div class="col-md-2 pull-right">
                     <% if (user&&blog.author_name == user.name) {%>
                         <a href="/edit/<%=blog._id%>"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="/blog/<%=blog._id%>"><i class="fa fa-comments fa-lg"></i></a>
+                        <a href="/blog/<%=blog._id%>"><i class="fa fa-comments fa-lg"><small> <%= blog.comments.length %> </small></i></a>
                         <a href="/delete/<%=blog._id%>"><i class="fa fa-trash-o fa-lg"></i></i></a>
                     <% } else {%>
-                        <a href="/comment/<%=blog._id%>"><i class="fa fa-comments fa-lg"></i></a>
+                        <a href="/blog/<%=blog._id%>"><i class="fa fa-comments fa-lg"><small> <%= blog.comments.length %> </small></i></a>
                     <% } %>
                 </div>
             </div>

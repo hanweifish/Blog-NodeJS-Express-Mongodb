@@ -19,6 +19,7 @@
     "mongoose": "^4.0.1",
     "mongoose-session": "0.0.3",
     "morgan": "~1.5.1",
+    "multer": "^0.1.8",
     "serve-favicon": "~2.2.0"
   }
 }

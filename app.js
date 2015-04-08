@@ -9,6 +9,9 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
+var multer  = require('multer')
+
+
 
 
 
@@ -28,6 +31,8 @@ app.use(session({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(flash());
+app.use(multer({ dest: './uploads/'}))
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
